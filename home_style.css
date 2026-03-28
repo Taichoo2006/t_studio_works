@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Senobi-Gothic-Medium";
-  src: url("assets/fonts/Senobi-Gothic-Medium.ttf") format("truetype");
+  src: url("/assets/fonts/Senobi-Gothic-Medium.ttf") format("truetype");
 }
 
 .nav-container {
