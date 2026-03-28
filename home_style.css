@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Senobi-Gothic-Medium";
+  src: url("assets/fonts/Senobi-Gothic-Medium.ttf") format("truetype");
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header img {
+  padding: 10px 10px;
+}
+
+.header a {
+  border-left: 5px solid #3A454D;
+  text-decoration: none;
+  align-items: center;
+  padding: 0 5%;
+  font-family: "Audiowide", cursive;
+  color: #118ACB;
+  font-size: 2vw;
+}
+
+.header a:first-child {
+  border: none;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.banner {
+  background: linear-gradient(135deg, #A6E0FF,#118ACB);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Senobi-Gothic-Medium";
+  color: #fff;
+  font-size: 50px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+  font-family: "Senobi-Gothic-Medium";
+}
+
+.sidebar {
+  background-color: #A6E0FF;
+  width: 350px;
+  flex-shrink: 0;
+}
+
+.main-content {
+  background-color: #fff;
+  flex: 1;
+}
+
+.footer {
+  background: linear-gradient(135deg, #5F7280, #3A454D);
+  padding: 50px 0;
+  font-family: "Senobi-Gothic-Medium";
+  color: #fff;
+  font-size: 35px;
+  text-align: center;
+}
