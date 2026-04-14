@@ -65,7 +65,8 @@ input[name="chara-select"] {
 
 #tab1:checked ~ .contents #content1,
 #tab2:checked ~ .contents #content2,
-#tab3:checked ~ .contents #content3 {
+#tab3:checked ~ .contents #content3,
+#tab4:checked ~ .contents #content4 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -104,6 +105,7 @@ input[name="chara-select"] {
 #tab1:checked ~ .btn-group label[for="tab1"] { background: #EC838E; }
 #tab2:checked ~ .btn-group label[for="tab2"] { background: #118ACB; }
 #tab3:checked ~ .btn-group label[for="tab3"] { background: #FFF56D; }
+#tab4:checked ~ .btn-group label[for="tab4"] { background: #E25050; }
 
 .btn {
   padding: 10px 20px;
