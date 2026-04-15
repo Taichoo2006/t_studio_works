@@ -47,76 +47,16 @@ main {
   flex: 1;
 }
 
-input[name="chara-select"] {
-  display: none;
+.sub-nav {
+  background-color: #118ACB;
 }
 
-.btn-group {
-  display: flex;
-  justify-content: center;
+.sub-nav a {
+  text-decoration: none;
+  padding-left: 10px;
   font-family: "Audiowide", cursive;
-  font-size: 30px;
-}
-
-.content {
-  display: none;
-  align-items: center;
-}
-
-#tab1:checked ~ .contents #content1,
-#tab2:checked ~ .contents #content2,
-#tab3:checked ~ .contents #content3,
-#tab4:checked ~ .contents #content4 {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  padding: 20px;
-}
-
-.chara-image img {
-  width: 1000px;
-  height: auto;
-  align-items: left;
-}
-
-.chara-info {
-  vertical-align: top;
-  width: 650px;
-  align-items: right;
-  text-align: left;
-}
-
-.description {
-  font-family: "Senobi-Gothic-Medium";
-  font-size: 50px;
-}
-
-.name {
-  font-family: "Audiowide", cursive;
-  font-size: 85px;
-}
-
-.profile {
-  font-family: "Senobi-Gothic-Medium";
-  font-size: 30px;
-}
-
-#tab1:checked ~ .btn-group label[for="tab1"] { background: #EC838E; }
-#tab2:checked ~ .btn-group label[for="tab2"] { background: #118ACB; }
-#tab3:checked ~ .btn-group label[for="tab3"] { background: #FFF56D; }
-#tab4:checked ~ .btn-group label[for="tab4"] { background: #E25050; }
-
-.btn {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  cursor: pointer;
-  display: inline-block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  color:#fff;
+  font-size: 65px;
 }
 
 .footer {
