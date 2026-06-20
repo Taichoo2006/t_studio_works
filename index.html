@@ -1,53 +1,100 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>T-STUDIO WORKS</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/home_style.css">
-    </head>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>T-STUDIO WORKS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="T-STUDIO OFFICIAL WEBSITE AND PORTFOLIO">
+    <meta name="author" content="Taichoo, T-STUDIO">
+    <link rel="stylesheet" href="/style.css">
 
-    <body>
-        <header class="header" id="header" style="background-color: #fff;">
-            <img src="/assets/images/logo/T-STUDIO_Logo_002_GeneralB.png" alt="T-STUDIO WORKS" width="500" height="auto">
-            <br>
-            <nav class="tab-nav">
-                <div class="nav-container" style="background-image: url('/assets/images/tab/Tab_Home.png');">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="/index.html" aria-label="Home"></a></li>
-                        <li class="nav-item"><a href="/about/index.html" aria-label="About us"></a></li>
-                        <li class="nav-item"><a href="/works/index.html" aria-label="Works"></a></li>
-                        <li class="nav-item"><a href="/characters/index.html" aria-label="Characters"></a></li>
-                        <li class="nav-item"><a href="/contact/index.html" aria-label="Contact us"></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-        <div class="wrapper">
-            <main class="main" id="main">
-                <div class="banner" id="banner">
-                    <img src="/assets/images/banner/Banner001.png" alt="SKYE Banner" width="100%" height="auto">
-                </div>
+<body id="top" class="home">
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="/assets/images/logo/T-STUDIO_Logo_002_GeneralW.png">
+        </a>
 
-                <div class="container">
-                    <aside class="sidebar">
-                        <p>工事中……</p>
-                    </aside>
+        <input type="checkbox" id="menu-btn" class="menu-checkbox">
+        <label for="menu-btn" class="menu-icon">
+            <img src="/assets/images/ui/Hamburger.png" alt="MENU"> </label>
 
-                    <main class="main-content">
-                        <p>工事中……</p>
-                    </main>
-                </div>
-            </main>
+        <nav class="nav">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="/characters/index.html">Characters</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">Items</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <footer class="footer" id="footer">
-                <img src="/assets/images/logo/T-STUDIO_Logo_002_White.png" alt="T-STUDIO WORKS" width="500" height="auto">
-                <br>
-                &copy; 2025-2026 T-STUDIO / エース隊長(Taichoo) All rights reserved.
-            </footer>
+    <div class="banner-image">
+        <img src="/assets/images/background/t-studio-works_sky_banner.png">
+    </div>
+
+    <main class="main">
+        <section class="news-section">
+            <h2 class="title">News</h2>
+            
+            <div class="news-list">
+                <a class="news-item">
+                    <span class="news-date">2026.03.28</span>
+                    <p class="news-text">T-STUDIO公式サイトがオープンしました。</p>
+                </a>
+
+                <a class="news-item">
+                    <span class="news-date">2026.6.20</span>
+                    <p class="news-text">T-STUDIO公式サイトのリニューアルにあたってベータ版を公開しました。</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <h2 class="title">Contents</h2>
+
+            <div class="card-list">
+                <a href="/characters/index.html" class="nav-card-v">
+                    <img src="/assets/images/banner/t-studio-characters_skye_banner.png">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-icon-links">
+                <a href="https://x.com/taichoo2006" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/X_logo_Blue.png" alt="X Personal">
+                    <span class="footer-icon-id">X<br>Personal<br>@taichoo2006</span>
+                </a>
+                
+                <a href="https://x.com/t_studio_works" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/X_logo_Blue.png" alt="X Official">
+                    <span class="footer-icon-id">X<br>Official<br>@t_studio_works</span>
+                </a>
+
+                <a href="https://www.pixiv.net/users/55983686" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/Pixiv_logo_Blue.png" alt="Pixiv">
+                    <span class="footer-icon-id">Pixiv<br>@taichoo2006</span>
+                </a>
+
+                <a href="https://t-studio-works.booth.pm/" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/BOOTH_logo_Blue.png" alt="BOOTH">
+                    <span class="footer-icon-id">BOOTH<br>@t-studio-works</span>
+                </a>
+            </div>
+
+            <p class="copyright">&copy; 2021 - 2026 エース隊長 / Taichoo and T-STUDIO. All Rights Reserved.</p>
+            
         </div>
-    </body>
-</html>
+    </footer>
+</body>

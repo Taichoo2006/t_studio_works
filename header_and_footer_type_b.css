@@ -1,0 +1,329 @@
+/* ========================================================
+   🌐 全体共通のデフォルトスタイル（子ページ・PC版ベース）
+   ======================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🏢 【隊長の配置をベースに大改造！】ヘッダーを白無地・通常配置にする */
+.header {
+  position: relative; /* 💡バナーの上に重ねず、独立した白い帯として配置するよ */
+  top: auto;
+  left: auto;
+  width: 100%;
+  z-index: 10;
+  background: #ffffff; /* 💡完全な白無地背景 */
+  border-bottom: 2px solid #e0e0e0; /* 💡下にうっすら境界線を入れて引き締める！ */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px; /* 隊長が調整した余白をキープ！ */
+}
+
+/* ⚠️【隊長カスタム位置】空中浮遊（絶対配置）の設定はそのまま引き継ぐよ！ */
+.nav ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  list-style: none;
+  white-space: nowrap;
+  gap: 40px; /* 隊長オリジナルの隙間幅！ */
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+/* 💡 白背景に合わせて、メニューの文字色をダークグレーに変更！ */
+.nav a {
+  color: #3A454D; /* 💡白背景で見えなくなる白文字から、見やすいグレーに変更 */
+  text-decoration: none;
+  text-shadow: none; /* 💡白背景には不要な文字の影（シャドウ）をスッキリカット */
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  transform: translateY(-4px);
+  color: #118ACB; /* ホバー時の綺麗な青はそのまま残してあるよ！ */
+}
+
+/* 💡 ロゴは白背景で見やすくなるので、ドロップシャドウを消去 */
+.logo img {
+  width: auto;
+  height: 40px;
+}
+
+.banner-image img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  color: #3A454D;
+  margin-top: 50px; /* 子ページでタイトルがヘッダーにめり込まないように余白を追加 */
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* --- News セクション --- */
+.news-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.news-list {
+  border-top: 4px solid #0075A9;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  border-bottom: 2px solid #0075A9; 
+  text-decoration: none;
+  color: #3A454D;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.news-item:hover {
+  background-color: #f9f9f9;
+  padding-left: 25px; 
+}
+
+.news-date {
+  font-size: 15px;
+  color: #118ACB;
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.news-text {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+/* --- Contents セクション --- */
+.card-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.nav-card-v {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.8));
+  transition: transform 0.3s ease, drop-shadow 0.3s ease;
+}
+
+.nav-card-v img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-card-v:hover {
+  transform: translateY(-4px);
+}
+
+/* --- フッター セクション（隊長がバッチリチューニングしてくれた設定のまま！） --- */
+.footer {
+  background-color: #3A454D;
+  padding: 40px 20px;
+  margin-top: 100px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-icon-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.footer-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 90px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.footer-icon-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.footer-icon-id {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-icon-item:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+}
+
+.copyright {
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+
+/* ========================================================
+   💻 PC画面（1081px以上）でのスマホ用パーツ徹底非表示設定
+   ======================================================== */
+.menu-checkbox,
+.menu-icon {
+  display: none !important;
+}
+
+
+/* ========================================================
+   📱 スマートフォン・縦置きモニター用スタイル（画面幅が1080px以下のとき）
+   ======================================================== */
+@media screen and (max-width: 1080px) {
+  
+  /* 💡 スマホの時もヘッダーを「白無地」にして通常配置にするよ */
+  .header {
+    position: relative !important; /* 固定を解除して画面の上部に白帯で置く */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    background: #ffffff !important; /* 💡スマホでも白無地 */
+    box-sizing: border-box !important;
+  }
+
+  /* ロゴのサイズを調整 */
+  .header .logo img {
+    height: 35px !important;
+    width: auto !important;
+  }
+
+  /* 🍔 1080px以下の時に、ハンバーガーボタンを表示させる！ */
+  .menu-icon {
+    display: block !important; 
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 30 !important;
+    filter: none !important; /* 白背景なのでドロップシャドウをオフに */
+  }
+
+  /* 💡 スマホボタンが白画像の場合に備えて、白背景上では自動で黒色に反転させる魔法 */
+  .menu-icon img {
+    width: 30px !important;
+    height: auto !important;
+    display: block !important;
+    filter: invert(1); 
+  }
+
+  /* 📱 スマホ・縦置きモニターの時に右から飛び出すメニュー画面（カッコいいダークブルー） */
+  .nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important; 
+    left: auto !important;
+    transform: none !important;
+    width: 300px !important;  
+    height: 100vh !important;
+    background: #0075A9 !important; /* 隊長オリジナルの鮮やかなブルー！ */
+    padding-top: 100px !important;
+    box-sizing: border-box !important;
+    transition: right 0.3s ease-out !important; 
+    z-index: 20 !important;
+  }
+
+  /* メニュー内のリストの空中浮遊をスマホ用に解除 */
+  .nav ul {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 35px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 飛び出したメニュー内の文字は、これまで通り綺麗な白文字！ */
+  .nav a {
+    font-size: 20px !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* 🔘 ボタンが押された時（チェックON）のギミック */
+  .menu-checkbox:checked ~ .nav {
+    right: 0 !important; 
+  }
+
+  /* ボタンが押されている間、アイコンを少し小さくする演出 */
+  .menu-checkbox:checked ~ .menu-icon {
+    transform: scale(0.9) !important;
+  }
+
+  /* 📱 【隊長カスタム】フッターのアイコン並び（1080px以下用の綺麗なグリッド） */
+  .footer-icon-links {
+    gap: 20px !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
+    max-width: 650px !important; /* 隊長の設定を完全引き継ぎ！ */
+    margin: 0 auto !important;
+  }
+
+  .footer-icon-id {
+    font-size: 12px !important; /* 隊長の設定を完全引き継ぎ！ */
+  }
+  
+  .footer-icon-item {
+    width: 100% !important;
+  }
+}

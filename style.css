@@ -1,0 +1,322 @@
+/* ========================================================
+   🌐 全体共通のデフォルトスタイル（PC版ベース）
+   ======================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.nav ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  list-style: none;
+  white-space: nowrap;
+  gap: 40px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  transform: translateY(-4px);
+  color: #118ACB;
+}
+
+.logo img {
+  width: auto;
+  height: 40px;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.8));
+}
+
+.banner-image img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  color: #3A454D;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* --- News セクション --- */
+.news-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.news-list {
+  border-top: 4px solid #0075A9;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  border-bottom: 2px solid #0075A9; 
+  text-decoration: none;
+  color: #3A454D;
+  transition: background-color 0.3s, padding-left 0.3s;
+}
+
+.news-item:hover {
+  background-color: #f9f9f9;
+  padding-left: 25px; 
+}
+
+.news-date {
+  font-size: 15px;
+  color: #118ACB;
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.news-text {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+/* --- Contents セクション --- */
+.card-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.nav-card-v {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.8));
+  transition: transform 0.3s ease, drop-shadow 0.3s ease;
+}
+
+.nav-card-v img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nav-card-v:hover {
+  transform: translateY(-4px);
+}
+
+/* --- フッター セクション --- */
+.footer {
+  background-color: #3A454D;
+  padding: 40px 20px;
+  margin-top: 100px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-icon-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.footer-icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  width: 90px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.footer-icon-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.footer-icon-id {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-icon-item:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+}
+
+.copyright {
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+
+/* ========================================================
+   💻 PC画面（1081px以上）でのスマホ用パーツ徹底非表示設定
+   ======================================================== */
+.menu-checkbox,
+.menu-icon {
+  display: none !important;
+}
+
+
+/* ========================================================
+   📱 スマートフォン・縦置きモニター用スタイル（画面幅が1080px以下のとき）
+   ======================================================== */
+@media screen and (max-width: 1080px) {
+  
+  /* スマホ・縦画面用のヘッダー配置を最優先で上書き */
+  .header {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 20px !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ロゴのサイズを調整 */
+  .header .logo img {
+    height: 35px !important;
+    width: auto !important;
+  }
+
+  /* 🍔 1080px以下の時に、ハンバーガーボタンを表示させる！ */
+  .menu-icon {
+    display: block !important; 
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 30 !important;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.8)) !important;
+  }
+
+  /* ボタン画像のサイズ調整 */
+  .menu-icon img {
+    width: 30px !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* 📱 スマホ・縦置きモニターの時に右から飛び出すメニュー画面 */
+  .nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important; /* 初期状態は画面の右外に隠す */
+    left: auto !important;
+    transform: none !important;
+    width: 300px !important;  /* メニューの横幅をスマートなサイズに固定 */
+    height: 100vh !important;
+    background: #0075A9 !important; 
+    padding-top: 100px !important;
+    box-sizing: border-box !important;
+    transition: right 0.3s ease-out !important; 
+    z-index: 20 !important;
+  }
+
+  /* ⚠️【ここが最大の修正点！】メニュー内のリストの空中浮遊（絶対配置）をスマホ用に完全解除するよ！ */
+  .nav ul {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 35px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .nav a {
+    font-size: 20px !important;
+    color: #fff !important;
+    text-shadow: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* 🔘 ボタンが押された時（チェックON）のギミック */
+  .menu-checkbox:checked ~ .nav {
+    right: 0 !important; /* 右からメニューがスライドイン！ */
+  }
+
+  /* ボタンが押されている間、アイコンを少し小さくする演出 */
+  .menu-checkbox:checked ~ .menu-icon {
+    transform: scale(0.9) !important;
+  }
+
+  /* 📱 フッターのアイコン並び（1080px以下用の綺麗なグリッド） */
+  .footer-icon-links {
+    gap: 20px !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
+    max-width: 650px !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-icon-id {
+    font-size: 12px !important;
+  }
+  
+  .footer-icon-item {
+    width: 100% !important;
+  }
+}

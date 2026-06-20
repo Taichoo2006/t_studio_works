@@ -1,86 +1,77 @@
-@font-face {
-  font-family: "Senobi-Gothic-Bold";
-  src: url("/assets/fonts/Senobi-Gothic-Bold.ttf") format("truetype");
+.page-title {
+    margin-top: 20px;
+    padding-left: 40px;
+    background-color: #118ACB;
+    color: #fff;
 }
 
-@font-face {
-  font-family: "Senobi-Gothic-Medium";
-  src: url("/assets/fonts/Senobi-Gothic-Medium.ttf") format("truetype");
+.title-en {
+    font-family: "Orbitron", sans-serif;
+    font-style: bold;
+    font-size: 2.5rem;
+    margin: 0;
 }
 
-.tab-nav {
-  width: 100%;
-  max-width: 2500px; /* ここで好きな表示サイズに制限 */
-  margin: 0 auto;
+.title-jp {
+    font-family: "M PLUS U", sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
 }
 
-.nav-container {
-  width: 100%;
-  /* 2500x200の比率を維持。これで画像が歪みません */
-  aspect-ratio: 2500 / 200; 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
+.characters-list {
+    padding: 40px;
 }
 
-.nav-list {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 100%;
-  height: 100%; /* 画像の高さ一杯をリンクエリアにする */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
 }
 
-.nav-item {
-  flex: 1; /* 100%を5等分（1枠20% = 500px相当） */
+.item {
+    border-radius: 40px 10px 20px 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
 }
 
-.nav-item a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* 姿は見えないけどクリックできる状態にする */
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0); /* 完全透明 */
+.item img {
+    border-radius: 40px 10px 0 0;
+    max-width: 100%;
+    height: auto;
 }
 
-/* どこをクリックできるか確認したい時は、一時的に色をつけると便利です */
-/* .nav-item a:hover { background-color: rgba(255, 255, 255, 0.2); } */
-
-html, body {
-  height: 100%;
-  margin: 0;
+.item p {
+    padding: 0 0 10px 10px;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-main {
-  flex: 1;
+.ja-name {
+    font-size: 2.5rem;
+    font-family: "M PLUS U", sans-serif;
 }
 
-.sub-nav {
-  background-color: #118ACB;
+.en-name {
+    font-size: 1.5rem;
+    font-family: "Orbitron", sans-serif;
 }
 
-.sub-nav a {
-  text-decoration: none;
-  padding-left: 10px;
-  font-family: "Audiowide", cursive;
-  color:#fff;
-  font-size: 65px;
-}
+@media screen and (max-width: 1080px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
 
-.footer {
-  background: linear-gradient(135deg, #5F7280, #3A454D);
-  padding: 50px 0;
-  font-family: "Senobi-Gothic-Medium";
-  color: #fff;
-  font-size: 35px;
-  text-align: center;
+    .ja-name {
+        font-size: 2rem !important;
+    }
+
+    .en-name {
+        font-size: 1.5rem !important;
+    }
 }

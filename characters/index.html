@@ -1,45 +1,117 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Project: WHITNEY CHARACTERS</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/characters/characters_style.css">
-    </head>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>CHARACTERS | T-STUDIO WORKS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="T-STUDIO OFFICIAL WEBSITE AND PORTFOLIO">
+    <meta name="author" content="Taichoo, T-STUDIO">
+    <link rel="stylesheet" href="/header_and_footer_type_b.css">
+    <link rel="stylesheet" href="/characters/characters_style.css">
 
-    <body>
-        <header class="header" id="header" style="background-color: #fff;">
-            <img src="/assets/images/logo/T-STUDIO_Logo_002_GeneralB.png" alt="T-STUDIO WORKS" width="500" height="auto">
-            <br>
-            <nav class="tab-nav">
-                <div class="nav-container" style="background-image: url('/assets/images/tab/Tab_Characters.png');">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="/index.html" aria-label="Home"></a></li>
-                        <li class="nav-item"><a href="/about/index.html" aria-label="About us"></a></li>
-                        <li class="nav-item"><a href="/works/index.html" aria-label="Works"></a></li>
-                        <li class="nav-item"><a href="/characters/index.html" aria-label="Characters"></a></li>
-                        <li class="nav-item"><a href="/contact/index.html" aria-label="Contact us"></a></li>
-                    </ul>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+U:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body id="top" class="home">
+    <header class="header">
+        <a href="/index.html" class="logo">
+            <img src="/assets/images/logo/T-STUDIO_Logo_002_GeneralB.png">
+        </a>
+
+        <input type="checkbox" id="menu-btn" class="menu-checkbox">
+        <label for="menu-btn" class="menu-icon">
+            <img src="/assets/images/ui/Hamburger.png" alt="MENU">
+        </label>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="/characters/index.html">Characters</a></li>
+                <li><a href="#">Works</a></li>
+                <li><a href="#">Items</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="page-title">
+            <p class="title-en">CHARACTERS</p>
+            <p class="title-jp">キャラクター</p>
+        </div>
+
+        <div class="characters-list">
+            <div class="grid-container">
+                <div class="item" id="monica">
+                    <img src="/assets/characters_list/Monica_Thumbnail.png" alt="Monica Thumbnail">
+                    <p class="ja-name">モニカ</p>
+                    <p class="en-name">Monica</p>
                 </div>
-            </nav>
-        </header>
 
-        <div class="wrapper">
-            <main class="main" id="main">
-                <nav class="sub-nav">
-                    <a href="/characters/projectwhitney/index.html">Project: WHITNEY</a><br>
-                    <a href="/characters/othercharacters/index.html">Other Characters</a>
-                </nav>
-            </main>
-        </div>
+                <div class="item" id="skye">
+                    <img src="/assets/characters_list/Skye_Thumbnail.png" alt="Skye Thumbnail">
+                    <p class="ja-name">スカイ</p>
+                    <p class="en-name">Skye</p>
+                </div>
 
-            <footer class="footer" id="footer">
-                <img src="/assets/images/logo/T-STUDIO_Logo_002_White.png" alt="T-STUDIO WORKS" width="500" height="auto">
-                <br>
-                &copy; 2025-2026 T-STUDIO / エース隊長(Taichoo) All rights reserved.
-            </footer>
+                <div class="item" id="lolly">
+                    <img src="/assets/characters_list/Lolly_Thumbnail.png" alt="Lolly Thumbnail">
+                    <p class="ja-name">ロリー</p>
+                    <p class="en-name">Lolly</p>
+                </div>
+
+                <div class="item" id="rosie">
+                    <img src="/assets/characters_list/Rosie_Thumbnail.png" alt="Rosie Thumbnail">
+                    <p class="ja-name">ロージー</p>
+                    <p class="en-name">Rosie</p>
+                </div>
+
+                <div class="item" id="ciara">
+                    <img src="/assets/characters_list/Ciara_Thumbnail.png" alt="Ciara Thumbnail">
+                    <p class="ja-name">シアラ</p>
+                    <p class="en-name">Ciara</p>
+                </div>
+
+                <div class="item" id="celica">
+                    <img src="/assets/characters_list/Celica_Thumbnail.png" alt="Celica Thumbnail">
+                    <p class="ja-name">セリカ</p>
+                    <p class="en-name">Celica</p>
+                </div>
+            </div>
         </div>
-    </body>
-</html>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-icon-links">
+                <a href="https://x.com/taichoo2006" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/X_logo_Blue.png" alt="X Personal">
+                    <span class="footer-icon-id">X<br>Personal<br>@taichoo2006</span>
+                </a>
+                
+                <a href="https://x.com/t_studio_works" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/X_logo_Blue.png" alt="X Official">
+                    <span class="footer-icon-id">X<br>Official<br>@t_studio_works</span>
+                </a>
+
+                <a href="https://www.pixiv.net/users/55983686" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/Pixiv_logo_Blue.png" alt="Pixiv">
+                    <span class="footer-icon-id">Pixiv<br>@taichoo2006</span>
+                </a>
+
+                <a href="https://t-studio-works.booth.pm/" target="_blank" rel="noopener" class="footer-icon-item">
+                    <img src="/assets/images/icon/BOOTH_logo_Blue.png" alt="BOOTH">
+                    <span class="footer-icon-id">BOOTH<br>@t-studio-works</span>
+                </a>
+            </div>
+
+            <p class="copyright">&copy; 2021 - 2026 エース隊長 / Taichoo and T-STUDIO. All Rights Reserved.</p>
+            
+        </div>
+    </footer>
+</body>
