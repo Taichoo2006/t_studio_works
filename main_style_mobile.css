@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  color: #3A454D;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* --- News セクション --- */
+.news-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.news-list {
+  border-top: 4px solid #0075A9;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  border-bottom: 2px solid #0075A9; 
+  text-decoration: none;
+  color: #3A454D;
+}
+
+.news-date {
+  font-size: 0.75rem;
+  color: #118ACB;
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.news-text {
+  font-size: 1rem;
+  white-space: normal;
+  overflow-wrap: break-word; 
+  word-break: break-all; 
+  flex-grow: 1;
+}
+
+/* --- Contents セクション --- */
+.card-section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.nav-card-v {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+  filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.8));
+}
+
+.nav-card-v img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
