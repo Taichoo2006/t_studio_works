@@ -57,7 +57,7 @@
 }
 
 .ja-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-family: "M PLUS U", sans-serif;
 }
 
@@ -106,7 +106,9 @@
 
 /* 📝 右側：テキストエリアを「全体の3分の1」の幅に固定する */
 .popup-text-area {
-    width: calc(100% * 1 / 3) !important; /* 100%を3で割って1をかける（3分の1） */
+    width: calc(100% * 1 / 3) !important; /* */
+    padding-right: 40px !important;       /* ✨【追加】これで右端から文字が綺麗に離れます！ */
+    box-sizing: border-box !important;    /* ✨【追加】余白を入れても全体の横幅（3分の1）がズレないようにするお守り */
 }
 
 /* ポップアップ内の名前全体のスタイル */
@@ -132,4 +134,30 @@
     font-size: 1.25rem;
     color: #fff;
     white-space: pre-wrap;
+}
+
+/* 🎯 【追加】PC版の閉じるボタンを右上にピン留めするスタイル */
+#close-btn {
+    position: absolute;       /* 独立させてピン留めする魔法 */
+    top: 30px;                /* 上からのすきま */
+    right: 40px;              /* 右からのすきま（テキストエリアの右端に合わせやすい位置） */
+    
+    /* 🎨 ボタンのデザイン（お好みで調整してね！） */
+    padding: 10px 24px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 30px;
+    font-family: "M PLUS U", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    transition: background-color 0.2s;
+}
+
+/* マウスを乗せたときにちょっと色を変える演出 */
+#close-btn:hover {
+    background-color: #e0e0e0;
 }

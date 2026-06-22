@@ -31,8 +31,11 @@
 
 .item {
     border-radius: 40px 10px 20px 20px;
+    border-style: none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(5px);
+    text-align: left;
+
 }
 
 .item img {
@@ -53,4 +56,109 @@
 .en-name {
     font-size: 0.75rem;
     font-family: "Orbitron", sans-serif;
+}
+
+/* 最初は非表示にするクラス */
+.hidden {
+  display: none !important; /* 他のスタイルに負けないように一応！ */
+}
+
+/* ==========================================================================
+   スマートフォン用ポップアップレイアウト（縦並び・上下50%ずつ）
+   ========================================================================== */
+
+/* 1. ポップアップの背景（画面全体を覆う） */
+#profile-popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* スマホで見やすいように少し暗めに */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. ポップアップの中身（縦並びのコンテナに変身！） */
+.popup-content {
+    display: flex !important;
+    flex-direction: column !important; /* 💡これで「上から下」の縦並びになるよ！ */
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 90%;  /* スマホの画面端に少しスキマをあける */
+    height: 85vh !important; /* 画面の高さ85%に収めてコンパクトに */
+    background-color: rgba(255, 255, 255, 0.05); /* 好みに合わせて背景色は調整してね */
+    padding: 20px;
+    box-sizing: border-box !important;
+    gap: 20px; /* 上半分と下半分の間のスキマ */
+}
+
+/* 🖼️ 3. 上半分：画像エリア（全体の2分の1） */
+.images {
+    display: flex !important;
+    align-items: center !important;     /* 縦（上下）中央揃え */
+    justify-content: center !important;  /* 横中央揃え */
+    width: 100% !important;             /* 横幅はいっぱい */
+    height: calc(100% * 1 / 2) !important; /* ✨これでピッタリ「上半分（2分の1）」！ */
+}
+
+/* 画像自体のマックスサイズ調整 */
+#full-img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: 100% !important;            /* 上半分のエリアいっぱいに広げる */
+    max-height: 100% !important;
+    object-fit: contain;                /* キャラクターが歪まないように守る */
+}
+
+/* 📝 4. 下半分：テキストエリア（全体の2分の1） */
+.popup-text-area {
+    width: 100% !important;             /* 横幅はいっぱい */
+    height: calc(100% * 1 / 2) !important; /* ✨これでピッタリ「下半分（2分の1）」！ */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;        /* テキストは上詰めで開始 */
+    overflow-y: auto;                   /* 万が一プロフィールが長くなってもスクロールできるように安全策！ */
+    text-align: center;                 /* スマホで見栄えが良い中央寄せ */
+}
+
+/* 5. ポップアップ内の名前スタイル（スマホ用に少しサイズを微調整） */
+#popup-name {
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.popup-ja {
+    font-family: "M PLUS U", sans-serif;
+    font-size: 2rem; /* スマホに合わせて少しコンパクトに */
+    color: #fff;
+}
+
+.popup-en {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* 6. プロフィール文章 */
+#popup-profile {
+    font-size: 1rem;
+    color: #fff;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* 7. 閉じるボタン（スマホでタップしやすいように） */
+#close-btn {
+    position: absolute;
+    top: 10px; right: 10px;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    font-family: "M PLUS U", sans-serif;
+    font-weight: bold;
+    z-index: 10000;
 }
