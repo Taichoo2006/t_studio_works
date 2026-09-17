@@ -1,0 +1,18 @@
+<div class="news-list">
+    <h2 class="news-title">NEWS</h2>
+
+    <a class="news-item">
+        <span class="news-date">2026.03.28</span>
+        <p class="news-text">T-STUDIO公式サイトがオープンしました。</p>
+    </a>
+
+    <a class="news-item">
+        <span class="news-date">2026.6.20</span>
+        <p class="news-text">T-STUDIO公式サイトのリニューアルにあたってベータ版を公開しました。</p>
+    </a>
+
+    <a class="news-item">
+        <span class="news-date">2026.8.28</span>
+        <p class="news-text">現在、T-STUDIO公式サイトの更なる改装をしています。</p>
+    </a>
+</div>

@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "GenEiNuGothic-EB";
+    src: url("assets/fonts/GenEiNuGothic-EB.ttf") format("truetype");
+}
+
+.banner img{
+    width: 100%;
+}
+
+.containers {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #d9d9d9;
+    border-radius: 1rem;
+
+    background: rgba(243, 243, 243, 0.65);
+    backdrop-filter: blur(5px); 
+}
+
+.titles {
+    width: 100%;
+    font-size: 2rem;
+    border-bottom: 2px solid #BF264C;
+}
+
+.three-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 1rem;
+    gap: 2rem;
+    border-radius: 1rem;
+}
+
+.three-cards {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    border-radius: 1rem;
+
+    background: #bfbfbf;
+    transition: filter 0.2s linear;
+}
+
+.three-cards:hover {
+    filter: brightness(120%);
+}
+
+.topics-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-top: 1rem;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.topics-grid-cards {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+
+    background: #bfbfbf;
+    transition: filter 0.2s linear;
+}
+
+.topics-grid-cards:hover {
+    filter: brightness(120%);
+}
+
+.topics-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1rem 1rem 0 0;
+
+    background: #f3f3f3;
+}
