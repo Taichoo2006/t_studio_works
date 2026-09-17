@@ -61,29 +61,38 @@ header {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column; /* 縦並びに変更 */
+        flex-direction: column;
         height: auto;
-        padding: 1rem 0;
-        gap: 0.8rem;
+        padding: 0.8rem 0;
+        gap: 0.6rem;
     }
 
     .logo img {
-        height: 2rem;
+        height: 1.8rem;
     }
 
     .header-nav {
-        position: static; /* PC用のabsolute解除 */
+        position: static;
         width: 100%;
     }
 
     .header-nav ul {
+        display: flex;
         justify-content: center;
-        gap: 1.2rem; /* スマホ用に間隔を少しキュッと詰める */
-        flex-wrap: wrap; /* 画面がめちゃくちゃ狭くても折り返せるように */
-        padding: 0 1rem;
+        align-items: center;
+        /* 折り返さず1行に収める設定 */
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        padding: 0 0.5rem;
+
+        /* 画面幅に合わせて隙間が可変！ 
+           最小: 0.5rem / 推奨: 2.5vw / 最大: 1.2rem */
+        gap: clamp(0.5rem, 2.5vw, 1.2rem);
     }
 
     .header-nav ul li a {
-        font-size: 1rem; /* スマホ用に文字サイズを少し調整 */
+        /* 画面幅に合わせて文字サイズが可変！ 
+           最小: 0.7rem (約11.2px) / 推奨: 2.8vw / 最大: 1rem (16px) */
+        font-size: clamp(0.7rem, 2.8vw, 1rem);
     }
 }
