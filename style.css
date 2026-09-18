@@ -9,6 +9,16 @@
     src: url("assets/fonts/GenEiNuGothic-EB.ttf") format("truetype");
 }
 
+main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* テキストが少なくても画面全体に背景を敷く */
+
+    background-image: url(assets/images/VoronoiBG.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .banner img{
     width: 100%;
 }
@@ -34,23 +44,71 @@
 
 .three-cards-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-top: 1rem;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    border-radius: 1rem;
+    padding-top: 1rem;
 }
 
 .three-cards {
+    display: block;
     width: 100%;
     aspect-ratio: 3 / 1;
     border-radius: 1rem;
-
     background: #bfbfbf;
+    border: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    overflow: hidden;
     transition: filter 0.2s linear;
 }
 
 .three-cards:hover {
-    filter: brightness(120%);
+    filter: brightness(120%) saturate(0.85);
+}
+
+.three-cards img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: switchTwoImages 8s infinite;
+}
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2枚の画像を同じ位置にピッタリ重ねる */
+.three-cards .slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 2枚目（上にかぶさる画像）だけを一定周期で出したり消したりする */
+.slideshow img:nth-child(2) {
+    animation: bannerSwitch 10s infinite steps(1);
+}
+
+/* ホバーで一時停止 */
+.three-cards:hover .slideshow img {
+    animation-play-state: paused;
+}
+
+/* --- バナー切替用キーフレーム --- */
+/* 前半（0%〜49.99%）は非表示で1枚目が見える
+   後半（50%〜100%）は表示されて2枚目に切り替わる */
+@keyframes bannerSwitch {
+    0%, 49.99% {
+        opacity: 0;
+    }
+    50%, 100% {
+        opacity: 1;
+    }
 }
 
 .topics-grid-container {
@@ -72,7 +130,7 @@
 }
 
 .topics-grid-cards:hover {
-    filter: brightness(120%);
+    filter: brightness(120%) saturate(0.85);
 }
 
 .topics-img {
