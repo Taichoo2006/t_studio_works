@@ -9,27 +9,72 @@
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="footer.css">
         <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     </head>
 
     <body>
         <header>
-            <div class="logo">
-                <img src="assets/logo/T-STUDIO_Logo_RedBlack.png">
-            </div>
+            <div class="header-container">
+                <div class="top-header-container">
+                    <picture>
+                        <!-- ダークモード用のロゴ画像 -->
+                        <source srcset="assets/logo/T-STUDIO_Logo_RedWhite.png" media="(prefers-color-scheme: dark)">
 
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="#">CHARACTERS</a></li>
-                    <li><a href="#">WORKS</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
-                </ul>
-            </nav>
+                        <!-- 元のimgタグ（デフォルト：ライトモード用） -->
+                        <img class="logo" src="assets/logo/T-STUDIO_Logo_RedBlack.png" alt="T-STUDIO">
+                    </picture>
+
+                    <input id="menu" type="checkbox">
+                    <label for="menu" class="open">
+                        <img src="assets/images/Icon_Hamburger.png" alt="Open">
+                    </label>
+                    <label for="menu" class="back"></label>
+
+                    <nav class="top-nav">
+                        <label for="menu" class="close">
+                            <img src="assets/images/Icon_Close.png" alt="Close">
+                        </label>
+
+                        <ul>
+                            <li><a href="#">Media Info</a></li>
+                            <li><a href="#">Info</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="bottom-header-container">
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="#" class="active">Home</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Characters</a></li>
+                            <li><a href="#">Works</a></li>
+                            <li><a href="#">Merch</a></li>
+                            <li><a href="#">Fan Kits</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </header>
         <main>
             <div class="main-container">
-                <div class="banner">
-                    <img src="assets/images/Banner.png" alt="Banner">
+                <div class="splide banner">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="assets/images/Banner.png" alt="Banner">
+                            </li>
+                            
+                            <li class="splide__slide">
+                                <img src="assets/images/Banner2.png" alt="Banner">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="containers">
@@ -144,5 +189,8 @@
 
             <p class="copyright">&copy 2021 - 2026 エース隊長 / Taichoo and T-STUDIO</p>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>

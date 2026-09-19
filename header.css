@@ -11,90 +11,191 @@
 
 header {
     position: relative;
-    display: flex;
     width: 100%;
-    height: 7.5vh;
+    border-top: 0.5rem solid #D94C7B;
+    border-bottom: 0.25rem solid #D94C7B;
 
-    background: #fff;
+    background-image: url("assets/images/VoronoiBG.png");
+    background-size: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+    header {
+        /* ダークモード用の背景画像 */
+        background-image: url("assets/images/VoronoiBG-Dark.png");
+    }
+}
+
+.header-container {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-header-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 10vh;
+    gap: 0.5rem;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+    align-self: flex-start;
+
+    width: 20vw;
+    height: auto;
+
+    padding-top: 1rem;
+    flex-shrink: 0;
 }
 
-.logo img{
-    padding-left: 1rem;
-    height: 50%;
+/* top-nav 全体をフレキシブルにする */
+.top-nav {
+    display: flex;
+    align-items: flex-start;
 }
 
-.header-nav {
-    position: absolute;
+/* ul を Flexbox にして li を伸ばす設定にする */
+.top-nav ul {
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.25rem; /* ボタン同士のすき間（お好みで調整してね） */
+}
+
+.top-nav ul li {
+    list-style: none;
+    flex: 1 1 auto; /* コンテンツに合わせて可変（伸び縮み）する設定 */
+    min-width: 0;    /* ★縮むための必須プロパティ */
+}
+
+.top-nav li a{
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+
+    font-family: "GenEiNuGothic-EB", sans-serif;
+    font-size: 1rem;
+    color: #fff;
+
+    background: #D94C7B;
+}
+
+.bottom-header-container {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+}
+
+.main-nav {
+    width: 100%;
+}
+
+.main-nav ul {
+    display: flex;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
 }
 
-.header-nav ul{
-    display: flex;
-    gap: 10vw;
-}
-
-.header-nav ul li{
+/* li を均等に横いっぱいに広げる */
+.main-nav ul li {
     list-style: none;
-    display: inline-block;
+    flex: 1;
+    display: flex;
 }
 
-.header-nav ul li a{
+.main-nav li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 1rem 0 0;
     text-decoration: none;
-}
-
-.header-nav a{
+    
     font-family: "GenEiNuGothic-EB", sans-serif;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1rem;
+    color: #fff;
+    background: #D94C7B;
 }
 
-.header-nav a:hover{
-    color: #D94C7B;
+.open, .close img{
+    display: none;
 }
 
-@media (max-width: 768px) {
-    header {
+input[type="checkbox"] {
+    position: absolute;
+    left: -50vw;
+}
+
+@media screen and (max-aspect-ratio: 1 / 1) {
+    .header-container {
+        width: 90vw;
+    }
+
+    .top-nav {
+        width: 50%;
+    }
+
+    .top-nav ul {
         flex-direction: column;
-        height: auto;
-        padding: 0.8rem 0;
-        gap: 0.6rem;
-    }
-
-    .logo img {
-        height: 1.8rem;
-    }
-
-    .header-nav {
-        position: static;
         width: 100%;
+        gap: 0.5rem;
     }
 
-    .header-nav ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* 折り返さず1行に収める設定 */
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        padding: 0 0.5rem;
-
-        /* 画面幅に合わせて隙間が可変！ 
-           最小: 0.5rem / 推奨: 2.5vw / 最大: 1.2rem */
-        gap: clamp(0.5rem, 2.5vw, 1.2rem);
+    .bottom-header-container {
+        height: 3vh;
     }
 
-    .header-nav ul li a {
-        /* 画面幅に合わせて文字サイズが可変！ 
-           最小: 0.7rem (約11.2px) / 推奨: 2.8vw / 最大: 1rem (16px) */
-        font-size: clamp(0.7rem, 2.8vw, 1rem);
+    .main-nav li a {
+        font-size: min(0.55rem, 1rem);
+    }
+
+    /* ハンバーガー */
+    .open, .close{
+        display: inline;
+    }
+
+    .open img{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+        width: 2rem;
+    }
+
+    .top-nav {
+        position: fixed;
+        top: 0;
+        left: -100vw;;
+        height: 100vh;
+        transition: all 0.2s;
+        background: #D94C7B;
+
+        z-index: 10;
+    }
+
+    input[type="checkbox"]:checked ~ .top-nav {
+        left: -50%;
+    }
+
+    input[type="checkbox"]:checked ~ .top-nav {
+        left: 0;
+    }
+
+    input[type="checkbox"]:checked ~ .back {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+
+        z-index: 9;
     }
 }

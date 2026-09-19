@@ -9,18 +9,51 @@
     src: url("assets/fonts/GenEiNuGothic-EB.ttf") format("truetype");
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 main {
     position: relative;
     width: 100%;
     min-height: 100vh; /* テキストが少なくても画面全体に背景を敷く */
 
-    background-image: url(assets/images/VoronoiBG.png);
+    background-image: url("assets/images/VoronoiBG.png");
     background-size: cover;
     background-attachment: fixed;
 }
 
-.banner img{
+/* --- 1. バナーを画面横いっぱいに広げる指定 --- */
+.banner {
+    width: 100%;           /* 画面横幅いっぱいに広げる */
+    position: relative;     /* 矢印の基準位置にする */
+    margin: 0;
+}
+
+.banner .splide__track {
+    overflow: visible;
+
+    -webkit-mask-image: url('assets/images/Banner_Mask.png');
+    mask-image: url('assets/images/Banner_Mask.png');
+
+    -webkit-mask-mode: alpha;
+    mask-mode: alpha;
+    
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
+.banner img {
     width: 100%;
+    height: auto;
+    display: block;
 }
 
 .containers {
@@ -29,16 +62,13 @@ main {
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid #d9d9d9;
-    border-radius: 1rem;
-
-    background: rgba(243, 243, 243, 0.65);
-    backdrop-filter: blur(5px); 
 }
 
 .titles {
     width: 100%;
+    font-family: "GenEiNuGothic-EB", sans-serif;
     font-size: 2rem;
+    color: #000;
     border-bottom: 2px solid #BF264C;
 }
 
@@ -139,4 +169,32 @@ main {
     border-radius: 1rem 1rem 0 0;
 
     background: #f3f3f3;
+}
+
+@media screen and (max-aspect-ratio: 1 / 1) {
+    .three-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-top: 0;
+    }
+
+    .topics-grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    /* ダークモード用の背景画像 */
+        background-image: url("assets/images/VoronoiBG-Dark.png");
+    }
+
+    .titles {
+        color: #fff;
+    }
 }
